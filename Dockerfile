@@ -2,8 +2,8 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY . .
+# Only copy the app file (no need for tests here)
+COPY app.py /app/app.py
 
-RUN pip install --no-cache-dir -r requirements.txt
-
+# No dependencies needed for this simple demo
 CMD ["python", "app.py"]
